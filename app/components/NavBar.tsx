@@ -13,16 +13,18 @@ const NavBar = () => {
     { label: "Blog Posts", href: "/blog" },
   ];
   return (
-    <nav className="flex space-x-6 border-b mb-5 px-5 h-15 items-center">
-      <Link href="/">Sandeep Sandhu</Link>
-      <ul className="flex space-x-6">
+    <nav className="flex justify-center py-8 text-white bg-black space-x-6 border-b mb-5 px-5 h-15 items-center">
+      <Link className="text-2xl font-semibold " href="/">
+        Sandeep Sandhu
+      </Link>
+      <ul className="flex  space-x-6">
         {links.map((link) => (
           <Link
             key={link.href}
             className={classnames({
-              "text-zinc-900": link.href === currentPath,
-              "text-zinc-500": link.href !== currentPath,
-              " hover:text-zinc-800 transition-colors": true,
+              "text-white": link.href === currentPath,
+              "text-cream": link.href !== currentPath,
+              " hover:text-white transition-colors": true,
             })}
             href={link.href}
           >
