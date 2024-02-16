@@ -16,10 +16,10 @@ const NavBar = () => {
   ];
   return (
     <nav className="flex justify-center py-8 text-white bg-black space-x-10 border-b mb-5 px-5 h-15 items-center">
-      <Link className="text-2xl font-semibold " href="/">
+      <Link className="text-2xl font-semibold flex" href="/">
         Sandeep Sandhu
       </Link>
-      <ul className="flex  space-x-6">
+      <ul className="space-x-6 hidden lg:block">
         {links.map((link) => (
           <Link
             key={link.href}
@@ -44,7 +44,7 @@ const DownMenu = () => {
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
         <button
-          className="invisible lg:visible rounded-full w-[35px] h-[35px] inline-flex items-center justify-center text-violet11 "
+          className=" md:hidden rounded-full w-[35px] h-[35px] inline-flex items-center justify-center text-violet11 "
           aria-label="Customise options"
         >
           <HamburgerMenuIcon className="" />
