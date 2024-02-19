@@ -12,7 +12,7 @@ const NavBar = () => {
   const links = [
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
-    { label: "Blog Posts", href: "/blog" },
+    { label: "Blog Posts", href: "https://sandeepsandhu.hashnode.dev/" },
   ];
   return (
     <nav className="flex justify-center py-8 text-white bg-black space-x-10 h-15 items-center">
