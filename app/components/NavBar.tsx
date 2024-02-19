@@ -12,7 +12,7 @@ const NavBar = () => {
   const links = [
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
-    { label: "Blog Posts", href: "https://sandeepsandhu.hashnode.dev/" },
+    { label: "Blog Posts", href: "<a>https://sandeepsandhu.hashnode.dev/</a>" },
   ];
   return (
     <nav className="flex justify-center py-8 text-white bg-black space-x-10 h-15 items-center">
@@ -22,6 +22,7 @@ const NavBar = () => {
       <ul className="space-x-6 hidden lg:block">
         {links.map((link) => (
           <Link
+            target="_blank"
             key={link.href}
             className={classnames({
               "text-white": link.href === currentPath,
