@@ -2,17 +2,14 @@
 
 import React from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import classnames from "classnames";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 
 const NavBar = () => {
-  const currentPath = usePathname();
   const links = [
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
-    { label: "Blog Posts", href: "<a>https://sandeepsandhu.hashnode.dev/</a>" },
+    { label: "Blog Posts", href: "https://sandeepsandhu.hashnode.dev" },
   ];
   return (
     <nav className="flex justify-center py-8 text-white bg-black space-x-10 h-15 items-center">
@@ -22,13 +19,8 @@ const NavBar = () => {
       <ul className="space-x-6 hidden lg:block">
         {links.map((link) => (
           <Link
-            target="_blank"
             key={link.href}
-            className={classnames({
-              "text-white": link.href === currentPath,
-              "text-cream": link.href !== currentPath,
-              " hover:text-white transition-colors": true,
-            })}
+            className="text-white hover:text-white transition-colors"
             href={link.href}
           >
             {link.label}
