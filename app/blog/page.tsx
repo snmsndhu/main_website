@@ -13,7 +13,7 @@ export default async function Home() {
     query: `
       query($host: String!) {
         publication(host: $host) {
-          posts(first: 10) {
+          posts(first: 9) {
             edges {
               node {
                 coverImage {
@@ -40,11 +40,14 @@ export default async function Home() {
 
   return (
     <>
-      <Container className="max-w-4xl">
+      <Container className=" columns-auto gap-10 mt-10 max-w-6xl">
         <ul>
           {posts.map((post) => {
             return (
-              <li key={post.id} className="grid sm:grid-cols-2 gap-8 mb-16">
+              <li
+                key={post.id}
+                className="grid grid-cols-3 sm:grid-cols-2 gap-8 mb-16"
+              >
                 <Link href={`/posts/${post.slug}`}>
                   <Image
                     width="600"
@@ -55,7 +58,7 @@ export default async function Home() {
                   />
                 </Link>
                 <div>
-                  <h2 className="text-2xl pb-5 border-b-2 mb-5">
+                  <h2 className="text-lg pb-5 border-b-2 mb-5">
                     <Link href={`/posts/${post.slug}`}>{post.title}</Link>
                   </h2>
                   <p className="text-zinc-500">

@@ -15,8 +15,8 @@ export async function generateMetadata({
 }: PostParams): Promise<Metadata> {
   const post = await getPostBySlug(params.postSlug);
   return {
-    title: `${post.title} - Space Jelly`,
-    description: post.seo?.description || `Read ${post.title} on Space Jelly`,
+    title: `${post.title} - Sandeep`,
+    description: post.seo?.description || `Read ${post.title} on Sandeep `,
 
     // IMPORTANT: Remove this from your own project if using this as a starting template
     // This is a demo repository so this helps avoid duplicate content
@@ -35,17 +35,17 @@ export default async function Post({ params }: PostParams) {
   const post = await getPostBySlug(params.postSlug);
   return (
     <>
-      <Container className="max-w-5xl xl:max-w-7xl xl:grid xl:grid-cols-[2fr_1fr] gap-12 mt-12 mb-24">
-        <aside className="mb-12 xl:order-2">
+      <Container className="max-w-4xl xl:max-w-7xl xl:grid  gap-12 mt-12 mb-24">
+        <aside className="mb-12 xl:order-1">
           <Image
-            width="984"
-            height="554"
-            className="w-full rounded h-auto mb-6 xl:mb-12"
+            width="1000"
+            height="600"
+            className="w-full justify-center rounded h-auto mb-6 xl:mb-12"
             src={post.coverImage.url}
             alt=""
           />
         </aside>
-        <article className="w-full xl:order-1 mx-auto">
+        <article className="w-full xl:order-2 mx-auto">
           <h1 className="text-4xl font-bold mb-8">{post.title}</h1>
           <div className="max-w-3xl flex items-center gap-4 mb-8">
             <Image
@@ -80,7 +80,7 @@ export default async function Post({ params }: PostParams) {
             })}
           </p>
           <div
-            className="prose max-w-3xl prose-img:rounded"
+            className="prose max-w-4xl prose-img:rounded"
             dangerouslySetInnerHTML={{
               __html: post.content.html,
             }}
